@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace="a.b.pr.TestMapper">
+ 
+    <resultMap type="a.b.pr.Country" id="TestResultList">
+        <result property="code" column="code" />
+        <result property="name" column="name" />
+    </resultMap>
+ 
+    <select id="selectCountry" resultMap="TestResultList">
+        SELECT * FROM country
+    </select>
+ 
+    <insert id="insertCountry" parameterType="a.b.pr.Country">
+        INSERT into country (code, name) values(#{code}, #{name})
+    </insert>
+    
+</mapper>
